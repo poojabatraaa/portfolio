@@ -3,1025 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pooja Batra | Web Developer</title>
-    <style>
-        /* Global Styles */
-        :root {
-            --primary-color: #6c63ff;
-            --secondary-color: #4d44d9;
-            --dark-color: #333;
-            --light-color: #f4f4f4;
-            --success-color: #5cb85c;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--dark-color);
-            background-color: #f8f9fa;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        a {
-            text-decoration: none;
-            color: var(--primary-color);
-        }
-        
-        a:hover {
-            color: var(--secondary-color);
-        }
-        
-        /* Header */
-        .header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            z-index: 10;
-            transition: all 0.3s ease;
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-        
-        .nav-list {
-            list-style: none;
-            display: flex;
-        }
-        
-        .nav-list li {
-            margin-left: 30px;
-        }
-        
-        .nav-list a {
-            color: var(--dark-color);
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-list a:hover, 
-        .nav-list a.active {
-            color: var(--primary-color);
-        }
-        
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-            font-size: 1.5rem;
-        }
-        
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            background-color: #f9f9ff;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-content {
-            max-width: 600px;
-            z-index: 1;
-        }
-        
-        .hero-greeting {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-        
-        .hero-name {
-            font-size: 4rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            line-height: 1.2;
-        }
-        
-        .hero-title {
-            font-size: 2rem;
-            color: #666;
-            margin-bottom: 25px;
-        }
-        
-        .hero-description {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 30px;
-            max-width: 500px;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--primary-color);
-            color: #fff;
-            border-radius: 5px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .btn:hover {
-            background-color: var(--secondary-color);
-            color: #fff;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
-        }
-        
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-            margin-left: 15px;
-        }
-        
-        .btn-outline:hover {
-            background-color: var(--primary-color);
-        }
-
-        .social-icons {
-            display: flex;
-            margin-top: 25px;
-        }
-        
-        .social-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: #fff;
-            border-radius: 50%;
-            margin-right: 15px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .social-icon:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        .social-icon i {
-            color: var(--primary-color);
-            font-size: 1.2rem;
-        }
-        
-        /* About Section */
-        .section {
-            padding: 100px 0;
-        }
-        
-        .section-title {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 60px;
-            position: relative;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: var(--primary-color);
-        }
-        
-        .about-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .about-image {
-            flex: 1;
-            text-align: center;
-        }
-        
-        .about-image img {
-            max-width: 80%;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .about-text {
-            flex: 1;
-            padding-left: 50px;
-        }
-        
-        .about-text h3 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-        
-        .about-text p {
-            margin-bottom: 20px;
-            color: #666;
-        }
-        
-        .skills {
-            margin-top: 30px;
-        }
-        
-        .skill-item {
-            margin-bottom: 15px;
-        }
-        
-        .skill-name {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 8px;
-        }
-        
-        .skill-bar {
-            height: 10px;
-            background-color: #e9ecef;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        
-        .skill-progress {
-            height: 100%;
-            background-color: var(--primary-color);
-            border-radius: 10px;
-            transition: width 1.5s ease;
-            width: 0;
-        }
-        
-        /* Services Section */
-        .services {
-            background-color: #f9f9ff;
-        }
-        
-        .services-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .service-card {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .service-icon {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-        
-        .service-title {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-        
-        .service-description {
-            color: #666;
-        }
-        
-        /* Portfolio Section */
-        .portfolio-filter {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 40px;
-        }
-        
-        .filter-item {
-            padding: 8px 20px;
-            margin: 0 5px;
-            background-color: #fff;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 500;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-        }
-        
-        .filter-item.active, 
-        .filter-item:hover {
-            background-color: var(--primary-color);
-            color: #fff;
-        }
-        
-        .portfolio-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
-        }
-        
-        .portfolio-item {
-            border-radius: 10px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .portfolio-image {
-            height: 250px;
-            background-size: cover;
-            background-position: center;
-            transition: all 0.5s ease;
-        }
-        
-        .portfolio-image:hover {
-            transform: scale(1.1);
-        }
-        
-        .portfolio-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(108, 99, 255, 0.9);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-        
-        .portfolio-item:hover .portfolio-overlay {
-            opacity: 1;
-        }
-        
-        .portfolio-title {
-            color: #fff;
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            transform: translateY(20px);
-            transition: all 0.4s ease;
-        }
-        
-        .portfolio-category {
-            color: #eee;
-            transform: translateY(20px);
-            transition: all 0.4s ease;
-            transition-delay: 0.1s;
-        }
-        
-        .portfolio-item:hover .portfolio-title,
-        .portfolio-item:hover .portfolio-category {
-            transform: translateY(0);
-        }
-        
-        /* Contact Section */
-        .contact {
-            background-color: #f9f9ff;
-        }
-        
-        .contact-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-            gap: 50px;
-        }
-        
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .contact-item {
-            display: flex;
-            margin-bottom: 30px;
-        }
-        
-        .contact-icon {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            margin-right: 20px;
-        }
-        
-        .contact-text h4 {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
-        
-        .contact-text p {
-            color: #666;
-        }
-        
-        .contact-form {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-        
-        .form-control:focus {
-            border-color: var(--primary-color);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.1);
-        }
-        
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        /* Footer */
-        .footer {
-            padding: 50px 0 20px;
-            background-color: #2a2a2a;
-            color: #fff;
-        }
-        
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 30px;
-        }
-        
-        .footer-about {
-            flex: 1;
-            max-width: 400px;
-        }
-        
-        .footer-title {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 10px;
-        }
-        
-        .footer-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 2px;
-            background-color: var(--primary-color);
-        }
-        
-        .footer-text {
-            color: #bbb;
-            margin-bottom: 20px;
-        }
-        
-        .footer-social {
-            display: flex;
-        }
-        
-        .footer-social a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 35px;
-            height: 35px;
-            background-color: #3a3a3a;
-            border-radius: 50%;
-            margin-right: 10px;
-            transition: all 0.3s ease;
-        }
-        
-        .footer-social a:hover {
-            background-color: var(--primary-color);
-        }
-        
-        .footer-social a i {
-            color: #fff;
-            font-size: 1rem;
-        }
-        
-        .footer-links {
-            flex: 1;
-            max-width: 200px;
-        }
-        
-        .footer-links ul {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-links a {
-            color: #bbb;
-            transition: all 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            color: #fff;
-            padding-left: 5px;
-        }
-        
-        .footer-contact {
-            flex: 1;
-            max-width: 300px;
-        }
-        
-        .footer-contact-item {
-            display: flex;
-            margin-bottom: 15px;
-            color: #bbb;
-        }
-        
-        .footer-contact-item i {
-            color: var(--primary-color);
-            margin-right: 15px;
-            font-size: 1.2rem;
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #3a3a3a;
-            color: #bbb;
-        }
-        
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .hero-name {
-                font-size: 3rem;
-            }
-            
-            .hero-title {
-                font-size: 1.8rem;
-            }
-            
-            .about-content {
-                flex-direction: column;
-            }
-            
-            .about-image {
-                margin-bottom: 50px;
-            }
-            
-            .about-text {
-                padding-left: 0;
-            }
-            
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-content {
-                flex-wrap: wrap;
-            }
-            
-            .footer-about, .footer-links, .footer-contact {
-                max-width: 100%;
-                margin-bottom: 30px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-            
-            .nav-list {
-                position: fixed;
-                top: 70px;
-                right: -100%;
-                width: 250px;
-                height: calc(100vh - 70px);
-                background-color: #fff;
-                flex-direction: column;
-                align-items: center;
-                justify-content: flex-start;
-                padding-top: 30px;
-                transition: all 0.4s ease;
-                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-                overflow-y: auto;
-            }
-            
-            .nav-list.active {
-                right: 0;
-            }
-            
-            .nav-list li {
-                margin: 15px 0;
-            }
-            
-            .hero-content {
-                text-align: center;
-                padding: 0 20px;
-            }
-            
-            .hero-description {
-                margin: 0 auto 30px;
-            }
-            
-            .social-icons {
-                justify-content: center;
-            }
-            
-            .portfolio-container {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .header-content {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .logo {
-                margin-bottom: 10px;
-            }
-
-            .nav-list {
-                width: 100%;
-                height: calc(100vh - 60px);
-            }
-
-            .hero-name {
-                font-size: 2.5rem;
-            }
-
-            .hero-title {
-                font-size: 1.5rem;
-            }
-
-            .hero-description {
-                font-size: 1rem;
-            }
-
-            .btn {
-                padding: 10px 20px;
-            }
-
-            .btn-outline {
-                margin-left: 10px;
-            }
-
-            .about-text {
-                padding-left: 0;
-            }
-
-            .about-image img {
-                max-width: 100%;
-            }
-
-            .service-card {
-                padding: 20px;
-            }
-
-            .portfolio-container {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .footer-about, .footer-links, .footer-contact {
-                max-width: 100%;
-                margin-bottom: 20px;
-            }
-        }
-        
-        /* Animation */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .fade-in-up {
-            animation: fadeInUp 0.6s ease forwards;
-        }
-        
-        .delay-1 {
-            animation-delay: 0.2s;
-        }
-        
-        .delay-2 {
-            animation-delay: 0.4s;
-        }
-        
-        .delay-3 {
-            animation-delay: 0.6s;
-        }
-        
-        .delay-4 {
-            animation-delay: 0.8s;
-        }
-    </style>
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
+<body class="light-theme">
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Portfolio</div>
+        <div class="theme-switch">
+            <button id="themeToggle" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <h3 class="hero-greeting fade-in-up">Hello, I'm</h3>
-                <h1 class="hero-name fade-in-up delay-1">Pooja Batra</h1>
-                <h2 class="hero-title fade-in-up delay-2">Web Developer</h2>
-                <p class="hero-description fade-in-up delay-3">
-                    I craft elegant, responsive, and user-friendly websites that deliver exceptional user experiences and drive business growth.
-                </p>
-                <div class="fade-in-up delay-4">
-                    <a href="#portfolio" class="btn">View My Work</a>
-                    <a href="#footer" class="btn btn-outline">Contact Me</a>
-                </div>
-                <div class="social-icons fade-in-up delay-4">
-                    <a href="https://www.linkedin.com/in/pab200024/" class="social-icon">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://github.com/poojabatraaa" class="social-icon">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </div>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm <span class="highlight">Pooja Batra</span></h1>
+            <p>Front-End Developer</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="cta-button">Get in Touch</a>
+                <a href="POOJA BATRA F resume.pdf.pdf" class="resume-button" download>
+                    <i class="fas fa-download"></i>
+                    Download Resume
+                </a>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section class="section about" id="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>I'm a passionate Web Developer</h3>
-                    <p>
-                        Hello! I'm Pooja Batra, a dedicated web developer with a passion for creating beautiful, functional, and user-friendly websites. I specialize in front-end and back-end development, focusing on delivering exceptional user experiences.
-                    </p>
-                    <p>
-                        With a strong foundation in modern web technologies and a keen eye for design, I transform ideas into robust digital solutions. I believe in writing clean, maintainable code and staying updated with the latest industry trends.
-                    </p>
-                    <div class="skills">
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>HTML/CSS</span>
-                                <span>95%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="95"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>JavaScript</span>
-                                <span>90%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="90"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>React.js</span>
-                                <span>85%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="85"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Node.js</span>
-                                <span>80%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="80"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="POOJA BATRA F resume.pdf.pdf" class="btn" style="margin-top: 20px;">Download Resume</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="section services" id="services">
-        <div class="container">
-            <h2 class="section-title">My Services</h2>
-            <div class="services-container">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3 class="service-title">Web Development</h3>
-                    <p class="service-description">
-                        I create beautiful, responsive websites optimized for performance and search engines, ensuring a smooth user experience across all devices.
-                    </p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3 class="service-title">Responsive Design</h3>
-                    <p class="service-description">
-                        I build websites that look and function perfectly on all devices, from desktops to smartphones, providing an optimal user experience.
-                    </p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-paint-brush"></i>
-                    </div>
-                    <h3 class="service-title">UI/UX Design</h3>
-                    <p class="service-description">
-                        I create intuitive, engaging user interfaces with a focus on user experience, making your website both visually appealing and easy to use.
-                    </p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <h3 class="service-title">Backend Development</h3>
-                    <p class="service-description">
-                        I develop robust server-side applications and APIs that power your website's functionality, ensuring secure and efficient data handling.
-                    </p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <h3 class="service-title">SEO Optimization</h3>
-                    <p class="service-description">
-                        I optimize your website for search engines to improve visibility and drive organic traffic, helping your business reach more customers.
-                    </p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3 class="service-title">Website Maintenance</h3>
-                    <p class="service-description">
-                        I provide ongoing maintenance and support to keep your website secure, up-to-date, and performing optimally at all times.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section class="section portfolio" id="portfolio">
-        <div class="container">
-            <h2 class="section-title">My Portfolio</h2>
-            <div class="portfolio-filter">
-                <div class="filter-item active" data-filter="all">All</div>
-                <div class="filter-item" data-filter="web">Web Design</div>
-                <div class="filter-item" data-filter="app">App Development</div>
-                <div class="filter-item" data-filter="ui">UI/UX Design</div>
-            </div>
-            <div class="portfolio-container">
-                <div class="portfolio-item" data-category="web">
-                    <div class="portfolio-image" style="background-image: url('https://via.placeholder.com/400x300')"></div>
-                    <div class="portfolio-overlay">
-                        <h3 class="portfolio-title">E-commerce Website</h3>
-                        <p class="portfolio-category">Web Design</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="app">
-                    <div class="portfolio-image" style="background-image: url('https://via.placeholder.com/400x300')"></div>
-                    <div class="portfolio-overlay">
-                        <h3 class="portfolio-title">Fitness App</h3>
-                        <p class="portfolio-category">App Development</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="ui">
-                    <div class="portfolio-image" style="background-image: url('https://via.placeholder.com/400x300')"></div>
-                    <div class="portfolio-overlay">
-                        <h3 class="portfolio-title">Banking Dashboard</h3>
-                        <p class="portfolio-category">UI/UX Design</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="web">
-                    <div class="portfolio-image" style="background-image: url('https://via.placeholder.com/400x300')"></div>
-                    <div class="portfolio-overlay">
-                        <h3 class="portfolio-title">Restaurant Website</h3>
-                        <p class="portfolio-category">Web Design</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="app">
-                    <div class="portfolio-image" style="background-image: url('https://via.placeholder.com/400x300')"></div>
-                    <div class="portfolio-overlay">
-                        <h3 class="portfolio-title">Travel App</h3>
-                        <p class="portfolio-category">App Development</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="ui">
-                    <div class="portfolio-image" style="background-image: url('https://via.placeholder.com/400x300')"></div>
-                    <div class="portfolio-overlay">
-                        <h3 class="portfolio-title">Social Media UI Kit</h3>
-                        <p class="portfolio-category">UI/UX Design</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Footer -->
-    <footer class="footer" id="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <h3 class="footer-title">About Me</h3>
-                    <p class="footer-text">
-                        I'm Pooja Batra, a passionate web developer dedicated to creating beautiful, functional, and user-friendly websites. Let's work together to bring your ideas to life!
-                    </p>
-                    <div class="footer-social">
-                        <a href="https://www.linkedin.com/in/pab200024/" class="social-icon">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://github.com/poojabatraaa" class="social-icon">
-                            <i class="fab fa-github"></i>
-                        </a>
-                       
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <h3 class="footer-title">Quick Links</h3>
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>As a Front-End Developer with over 3 years of experience, I specialize in crafting visually appealing and user-friendly web interfaces using Java and CSS. I have a proven track record of collaborating with backend developers to ensure seamless integration of frontend and backend components. My expertise includes optimizing frontend performance through efficient rendering techniques and minimizing load times. I take pride in developing responsive designs that provide consistent user experiences across various devices.</p>
+                <div class="experience">
+                    <h3>Key Achievements</h3>
                     <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li>Developed 10+ web applications using Java and CSS</li>
+                        <li>Implemented 5+ responsive designs for different screen sizes</li>
+                        <li>Optimized 3+ frontend applications to improve performance</li>
                     </ul>
                 </div>
-                <div class="footer-contact">
-                    <h3 class="footer-title">Contact Info</h3>
-                    <div class="footer-contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <p>poojabatra2018@gmail.com</p>
-                    </div>
-                    <div class="footer-contact-item">
-                        <i class="fas fa-phone-alt"></i>
-                        <p>+91 9876543210</p>
-                    </div>
+                <div class="skills">
+                    <h3>Skills</h3>
+                    <ul>
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>JavaScript</li>
+                        <li>Java</li>
+                        <li>Responsive Design</li>
+                        <li>Frontend Optimization</li>
+                        <li>UI/UX Design</li>
+                    </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Pooja Batra. All Rights Reserved.</p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+            <!-- Project cards will be added dynamically via JavaScript -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Get in Touch</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="address">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>2/6/29A Kandhari Bazar<br>
+                    Niyawah Road, Faizabad<br>
+                    Ayodhya Cantt</p>
+                </div>
+            </div>
+            <div class="whatsapp-link">
+                <a href="https://wa.me/918960990430" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Chat on WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-address">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>2/6/29A Kandhari Bazar, Niyawah Road, Faizabad (Ayodhya Cantt)</p>
+            </div>
+            <div class="footer-copyright">
+                <p>© 2024 Pooja Batra. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script>
-        document.getElementById('menu-toggle').addEventListener('click', function() {
-            document.getElementById('nav-list').classList.toggle('active');
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
-</html>
+</html> 
